@@ -19,8 +19,8 @@ imagenInicial=strcat(pathEntrada,nombreImagenP);
 pathAplicacionBR=strcat(pathAplicacion,'br/'); %background removal
 pathAplicacionROI=strcat(pathAplicacion,'roi/'); %region of interest
 
-pathAplicacion2=strcat(pathAplicacion,'sFrutas/'); %siluetas de frutas
-pathAplicacion3=strcat(pathAplicacion,'removido/'); %imagenes fondo removido
+pathAplicacion2=strcat(pathAplicacion,'sLeaves/'); %siluetas de frutas
+pathAplicacion3=strcat(pathAplicacion,'removed/'); %imagenes fondo removido
 
 % --- NOMBRE DE IMAGENES INTERMEDIAS ---
 % con fondo removido

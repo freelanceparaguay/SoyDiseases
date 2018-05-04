@@ -36,21 +36,15 @@ canalLMin = 37.882; canalLMax = 93.100; canalAMin = -4.215; canalAMax = 7.603; c
 %canalLMin = 37.882; canalLMax = 93.100; canalAMin = -3.024; canalAMax = 9.116; canalBMin = -1.242; canalBMax = 29.775;
 
 %% CONFIGURACIONES PARA DETECCION DE DEFECTOS
-tamanoManchas=1000; %se utiliza para extracción de contornos. Los contornos se encuentran arriba de 1000 pixeles
-archivoVectorDef=strcat(pathResultados,'aCandidatos.csv'); %archivo de salida candidatos a defectos
+%tamanoManchas=1000; %se utiliza para extracción de contornos. Los contornos se encuentran arriba de 1000 pixeles
+%archivoVectorDef=strcat(pathResultados,'aCandidatos.csv'); %archivo de salida candidatos a defectos
 
 % ----- FIN Definicion de topes
 %% Remover archivos antiguos, borrar archivos antiguos
 fprintf('LIMPIANDO IMAGENES ANTIGUAS \n');
-removeFiles(archivoVectorDef);
 removeFiles(strcat(pathAplicacion,'sLeaves/','*.jpg'));
-removeFiles(strcat(pathAplicacion,'sDefectos/','*.jpg'));
 removeFiles(strcat(pathAplicacion,'roi/','*.jpg'));
-removeFiles(strcat(pathAplicacion,'removido/','*.jpg'));
-removeFiles(strcat(pathAplicacion,'deteccion/','*.jpg'));
-removeFiles(strcat(pathAplicacion,'defectos/','*.jpg'));
-removeFiles(strcat(pathAplicacion,'contornos/','*.jpg'));
-removeFiles(strcat(pathAplicacion,'cDefectos/','*.jpg'));
+removeFiles(strcat(pathAplicacion,'removed/','*.jpg'));
 removeFiles(strcat(pathAplicacion,'br/','*.jpg'));
 
 
@@ -63,9 +57,9 @@ for n=1:size(listado)
     fprintf('Extrayendo características para entrenamiento-> %s \n',listado(n).name);    
     nombreImagenP=listado(n).name;
     ProcessImgSoft(pathEntradaImagenesTest, pathAplicacion, nombreImagenP, areaObjetosRemoverBR, canalLMin, canalLMax, canalAMin, canalAMax, canalBMin, canalBMax );
-    %if n==11
-    %    break;
-    %end %if n==11
+    if n==1
+        break;
+    end %if n==11
 end %
 
 %total=size(listado);

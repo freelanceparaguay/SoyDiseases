@@ -24,7 +24,7 @@ pathAplicacionBR=strcat(pathAplicacion,'br/'); %background removal
 pathAplicacionROI=strcat(pathAplicacion,'roi/'); %region of interest
 
 pathAplicacion2=strcat(pathAplicacion,'sLeaves/'); %siluetas de frutas
-pathAplicacion3=strcat(pathAplicacion,'removido/'); %imagenes fondo removido
+pathAplicacion3=strcat(pathAplicacion,'removed/'); %imagenes fondo removido
 
 % --- NOMBRE DE IMAGENES INTERMEDIAS ---
 % con fondo removido
@@ -48,7 +48,7 @@ nombreImagenRemovida=strcat(pathAplicacion3,nombreImagenP,'_','rm');
 %Cuadro1_espacioColumna=ArrayCuadros(1,3);
 %Cuadro1_espacioFila=ArrayCuadros(1,4);
 
-fprintf('BR -> Segmentación de fondo --> \n'); %salida una imagen con 4 siluetas
+fprintf('BR -> Segmentación de fondo  LAB--> \n'); %salida una imagen con 4 siluetas
 BRemovalLAB(imagenInicial, nombreImagenBR, nombreImagenF, areaObjetosRemoverBR, canalLMin, canalLMax, canalAMin, canalAMax, canalBMin, canalBMax);
 
 %% Removiendo fondo
